@@ -73,8 +73,8 @@ movies<- function(df1){
   max_val<-max(df1[,"duration"],na.rm=TRUE)
   min_movie<-filter(df1,df1$duration==min_val)
   max_movie<-filter(df1,df1$duration==max_val)
-  print(min_movie$title)
-  print(max_movie$title)
+  print(min_movie)
+  print(max_movie)
   #return(min_movie,max_movie)
   
 }
@@ -82,7 +82,7 @@ movies<- function(df1){
 
 #9
 sort_df<- function(df1){
-  dfsort<-df1[order(df1$year,-df1$imdbRating),]
+  dfsort<-df1[order(df1$title_year,-df1$imdb_score),]
   return(dfsort)
   
 }
